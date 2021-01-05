@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script> 
+		function calcula(operacion){ 
+			var operando1 = document.calc.operando1.value 
+			var operando2 = document.calc.operando2.value 
+			var result = eval(operando1 + operacion + operando2) 
+			document.calc.resultado.value = result 
+		} 
+		</script>
+		
+		<style>	
+			form{
+				padding:15px;
+				border:10px outset;
+			}
+			
+			input[type=Number]{
+			  width: 100%;
+			  padding: 12px 20px;
+			  margin: 8px 0;
+			  display: inline-block;
+			  border: 1px solid #ccc;
+			  border-radius: 4px;
+			  box-sizing: border-box;
+			}
+			input[type=Text]{
+			  width: 100%;
+			  padding: 12px 20px;
+			  margin: 8px 0;
+			  display: inline-block;
+			  border: 1px solid #ccc;
+			  border-radius: 4px;
+			  box-sizing: border-box;
+			  text-align:center;
+			}
+
+			input[type=Button]{
+			  width: 100%;
+			  background-color:rgb(0, 102, 255);
+			  color: white;
+			  padding: 14px 20px;
+			  margin: 8px 0;
+			  border: none;
+			  border-radius: 4px;
+			  cursor: pointer;
+			}
+
+			input[type=Button]:hover {
+			  background-color: #00a3cc;
+			}
+
+		</style>
+	</head>
+	
+	<body>
+		<div id="calculadora">
+			<form name="calc"> 
+			<input type="Number" name="operando1" value="0" size="12"> 
+			<br> 
+			<input type="Number" name="operando2" value="0" size="12"> 
+			<br> 
+			<input type="Button" name="" value=" + " onclick="calcula('+')"> 
+			<input type="Button" name="" value=" - " onclick="calcula('-')"> 
+			<input type="Button" name="" value=" X " onclick="calcula('*')"> 
+			<input type="Button" name="" value=" / " onclick="calcula('/')"> 
+			<br> 
+			<input type="Text" name="resultado" placeholder="Resultado" size="12" readonly> 
+			</form>
+		</div>
+	</body>
+
+</html>
